@@ -11,10 +11,12 @@ occupancy_detection = fetch_ucirepo(id=357)
 features = occupancy_detection['data']['features']
 targets = occupancy_detection['data']['targets']
 
+# Rozdělení data
 features['Year'] = pd.to_datetime(features['date'], errors='coerce').dt.year
 features['Month'] = pd.to_datetime(features['date'], errors='coerce').dt.month
 features['Day'] = pd.to_datetime(features['date'], errors='coerce').dt.day
 
+# Upravení dat na číselné hodnoty
 features.drop(columns=['date'], inplace=True)
 features = features.apply(pd.to_numeric, errors='coerce')
 features.dropna(inplace=True)

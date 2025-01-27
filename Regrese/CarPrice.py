@@ -1,12 +1,12 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 pd.set_option('future.no_silent_downcasting', True)
+
 # Predikce ceny ojetých aut
-# Regrese - Lineární regrese
+# Regrese - Náhodný les
 
 path_to_data = './Data/audi.csv'
 data = pd.read_csv(path_to_data)
