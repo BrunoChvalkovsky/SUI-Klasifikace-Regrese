@@ -12,6 +12,8 @@ communities_and_crime = fetch_ucirepo(id=183)
 X = communities_and_crime.data.features 
 y = communities_and_crime.data.targets 
 
+print(pd.DataFrame(communities_and_crime.data.features, columns=communities_and_crime.feature_names))
+
 # Doplnění prázdných polí
 X = X.copy()
 X.replace('?', float('nan'), inplace=True)

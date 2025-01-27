@@ -9,11 +9,15 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 # Regrese - Lineární regrese
 wine_quality = fetch_ucirepo(id=186) 
 
+
 X = wine_quality.data.features 
 y = wine_quality.data.targets 
 
 print(pd.DataFrame(wine_quality.data.features, columns=wine_quality.feature_names))
 
+# Žádná úprava dat není potřeba 
+# všechny hodnoty jsou číselné 
+# neobsahují chybějící hodnoty
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 print('Velikost trenovaci mnoziny: {}'.format(len(X_train)))
 print('Velikost testovaci mnoziny: {}'.format(len(X_test)))
