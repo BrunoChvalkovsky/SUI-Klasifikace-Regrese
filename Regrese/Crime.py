@@ -1,7 +1,7 @@
 import pandas as pd
 from ucimlrepo import fetch_ucirepo 
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import mean_absolute_error, mean_squared_error
   
@@ -25,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 print('Velikost trenovaci mnoziny: {}'.format(len(X_train)))
 print('Velikost testovaci mnoziny: {}'.format(len(X_test)))
 
-model = LinearRegression()
+model = RandomForestRegressor()
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
