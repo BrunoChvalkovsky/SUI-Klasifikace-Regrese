@@ -1,3 +1,4 @@
 # Ucimlrepo package installation required:
-Use:
+```sh
 pip install ucimlrepo
+```

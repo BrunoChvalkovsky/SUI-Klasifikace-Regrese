@@ -25,6 +25,8 @@ targets = targets.loc[features.index]
 X = features
 y = targets['Occupancy']
 
+print(pd.DataFrame(occupancy_detection.data.features, columns=occupancy_detection.feature_names))
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 print('Velikost trenovaci casti: {}'.format(len(X_train)))
 print('Velikost testovaci casti: {}'.format(len(X_test)))

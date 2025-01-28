@@ -23,6 +23,7 @@ output = ['is_canceled']
 X = data[input]
 y = data[output].values.ravel()
 
+# Převedení stringových sloupců na numerické
 categorical_cols = X.select_dtypes(include=['object']).columns.tolist()
 X = pd.get_dummies(X, columns=categorical_cols, drop_first=True)
 
